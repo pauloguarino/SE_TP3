@@ -107,6 +107,7 @@ El diagrama temporal se muestra en la figura 9.
 
 
 ## Example 10 - Blocking when receiving from a queue”
+En este ejemplo hay 3 tareas (vSender1, vSender1 y vReceiver) con prioridades 1, 1 y 2. Las tareas vSender envían el valor 100 o 200 a una cola de tamaño 5. Después la tarea vReceiver lee los datos de la cola y los imprime. Cabe aclarar, que la cola nunca se llenará porque vReceiver  es de mayor prioridad que la otra tarea que envía datos.
 El diagrama temporal se muestra en la figura 10.
 ## Example 11 - Blocking when sending to a queue or sending structures on a queue”
 El diagrama temporal se muestra en la figura 11.
