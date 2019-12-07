@@ -129,3 +129,10 @@ El diagrama temporal se muestra en la figura 14.
 ## Example 15- Re-writing vPrintString() to use a semaphore”
 El diagrama temporal se muestra en la figura 15.
 ![GitHub Logo](imagenes/WhatsApp Image 2019-11-15 at 7.06.43 AM.jpeg)
+
+## Implementación 1
+
+![GitHub Logo](imagenes/implementacion1.png)
+
+## Implementación 2
+![GitHub Logo](imagenes/implementacion2.png)
