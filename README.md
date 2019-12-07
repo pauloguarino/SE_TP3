@@ -56,7 +56,7 @@ Este programa crea dos tareas (task1 y task2), ambas de igual prioridad y que ll
 El ejemplo pretende mostrar que a igual prioridad, las tareas se reparten el tiempo de CPU. Además, muestra que se puede usar la misma función para diferentes tareas.
 La imagen siguiente muestra el reparto de la CPU en el tiempo.
 
-![GitHub Logo](imagenes/WhatsApp Image 2019-11-15 at 7.05.02 AM.jpeg)
+![GitHub Logo](/imagenes/WhatsApp Image 2019-11-15 at 7.05.02 AM.jpeg)
 
 ## Example 3 - Experimenting with priorities”
 En este ejemplo se usaron 2 tareas de distinta prioridad. En la gráfica se muestra que la task2 que es la tarea de mayor prioridad, es la única tarea que se ejecuta.
