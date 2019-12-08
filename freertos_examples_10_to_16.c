@@ -1689,3 +1689,83 @@ int main(void)
 
 #endif
 
+#if (TEST == EXAMPLE_E3)
+
+
+const char* pcTextForTask1 = "Esta es la tarea 1.\r\n";
+
+const char* pcTextForTask2 = "Esta es la tarea 2.\r\n";
+
+const char* pcTextForTask3 = "Esta es la tarea 3.\r\n";
+
+
+xSemaphoreHandle xMutex;
+
+
+static void vTaskFunction(void* pvParameters);
+
+
+static void vTaskFunction(void* pvParameters)
+
+{
+        char* pcTaskName;
+
+
+        pcTaskName = (char*) pvParameters;
+
+        while(1)
+
+        {
+
+                xSemaphoreTake(xMutex, portMAX_DELAY);
+                DEBUGOUT("Tomo el semaforo.\r\n");
+                DEBUGOUT(pcTaskName);
+                DEBUGOUT("LED ON.\r\n");
+                Board_LED_Set(LEDB, LED_ON);
+                vTaskDelay(500 / portTICK_RATE_MS);
+                Board_LED_Set(LEDB, LED_OFF);
+                DEBUGOUT("LED OFF.\r\n");
+                vTaskDelay(500 / portTICK_RATE_MS);
+                DEBUGOUT("Doy el semaforo.\r\n");
+                xSemaphoreGive(xMutex);
+                taskYIELD();
+
+        }
+
+}
+
+
+int main(void)
+
+{
+
+        /* Sets up system hardware */
+
+        prvSetupHardware();
+
+        DEBUGOUT("Ejercicio 3, creo el semaforo.\r\n");
+
+        xMutex = xSemaphoreCreateMutex();
+
+        /* Tarea 1 */
+
+        xTaskCreate(vTaskFunction, (char*) "Task1", configMINIMAL_STACK_SIZE,
+        		(void*) pcTextForTask1, (tskIDLE_PRIORITY + 1UL), (xTaskHandle*) NULL);
+        /* Tarea 2 */
+
+        xTaskCreate(vTaskFunction, (char*) "Task2", configMINIMAL_STACK_SIZE,
+        		(void*) pcTextForTask2, (tskIDLE_PRIORITY + 1UL), (xTaskHandle*) NULL);
+        /* Tarea 3*/
+
+        xTaskCreate(vTaskFunction, (char*) "Task3", configMINIMAL_STACK_SIZE,
+        		(void*) pcTextForTask3, (tskIDLE_PRIORITY + 1UL), (xTaskHandle*) NULL);
+
+        vTaskStartScheduler();
+
+        while(1);
+
+        return ((int) NULL);
+
+}
+
+#endif
