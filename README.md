@@ -136,3 +136,6 @@ El diagrama temporal se muestra en la figura 15.
 
 ## Implementación 2
 ![GitHub Logo](imagenes/implementacion2.png)
+
+## Implementación 3
+![GitHub Logo](imagenes/ejer_3.png)
