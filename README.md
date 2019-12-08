@@ -138,4 +138,7 @@ El diagrama temporal se muestra en la figura 15.
 ![GitHub Logo](imagenes/implementacion2.png)
 
 ## Implementación 3
+Se crean tres tareas de igual prioridad. Donde cada tarea hace titilar el mismo LED.
+Para que cada tarea complete una pasada se utiliza un mutex, que se toma al iniciar la tarea y se libera al finalizar el delay luego de apagar el LED.  A continuación, se muestra la ejecución del programa. 
+
 ![GitHub Logo](imagenes/ejer_3.png)
