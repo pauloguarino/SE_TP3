@@ -50,24 +50,25 @@ pxCurrentTCB = pxNewTCB;
 ```
 prvAddTaskToReadyList( pxNewTCB );
 ```
+![GitHub Logo](imagenes/imagen1.png)
 ## Example 2 - Using the task parameter”
 
 Este programa crea dos tareas (task1 y task2), ambas de igual prioridad y que llaman a la misma función (vTaskFunction). Difieren únicamente en el 'task name for the task', el cual se utiliza para imprimirlo una vez dentro de la tarea.
 El ejemplo pretende mostrar que a igual prioridad, las tareas se reparten el tiempo de CPU. Además, muestra que se puede usar la misma función para diferentes tareas.
 La imagen siguiente muestra el reparto de la CPU en el tiempo.
 
-![GitHub Logo](/imagenes/WhatsApp Image 2019-11-15 at 7.05.02 AM.jpeg)
+![GitHub Logo](imagenes/imagen2.png)
 
 ## Example 3 - Experimenting with priorities”
 En este ejemplo se usaron 2 tareas de distinta prioridad. En la gráfica se muestra que la task2 que es la tarea de mayor prioridad, es la única tarea que se ejecuta.
-
+![GitHub Logo](imagenes/imagen3.png)
 ## Example 4 - Using the Blocked state to create delay”
 Igual que el ejemplo anterior se crearon 2 tareas (task1 y task2), con task2 de mayor prioridad que task1. Y se agregó un tiempo de delay en ambas, mediante la función:
 ```
 vTaskDelay(100 / portTICK_RATE_MS);
 ```
 Esta función bloquea la tarea por un tiempo determinado, lo que libera a la CPU para que ejecute otras tareas. Es por eso que ambas tareas tienen su tiempo de CPU a pesar de que la task1 tiene menor prioridad que la task2.
-
+![GitHub Logo](imagenes/imagen4.png)
 ## Example 5 - Converting the example tasks to use vTaskDelayUntil”
 Este ejemplo funciona de forma similar al anterior pero asegura que el tiempo que la tarea está bloqueada es exactamente el explicitado. Esto ocurre por que se cambia 
 ```
@@ -84,14 +85,14 @@ vTaskDelayUntil(&xLastWakeTime, (250 / portTICK_RATE_MS));
 ```
 Mide el tiempo en el número de ticks con respecto al momento en que se sincroniza.
 El ejemplo tiene la siguiente respuesta temporal.
-
+![GitHub Logo](imagenes/imagen5.png)
 ## Example 6 - Combining blocking and non-blocking tasks”
 En este ejemplo hay 3 tareas, 2 de prioridad 1 y una periódica de prioridad 2. Las tareas de baja prioridad se encargan de prender y apagar el LED, mientras que la tarea de alta prioridad está bloqueada.Ver figura siguiente.
 
-![GitHub Logo](imagenes/WhatsApp Image 2019-11-15 at 7.05.20 AM.jpeg)
-
+![GitHub Logo](imagenes/imagen6.png)
 ## Example 7 - Defining an idle task hook function”
 En este ejemplo se define un tarea Idle que aumenta la cuenta de un contador y después llama a una interrupción que espera a que las demás tareas se habiliten. También se definen 2 tareas 'task1' con prioridad 1 y 'task2' con prioridad 2, que togglean el LED3, imprimen el contador del Idle y se bloquean. A continuación se muestra su diagrama temporal. 
+![GitHub Logo](imagenes/imagen7.png)
 ## Example 8 - Changing task priorities”
 En este ejemplo se utiliza un una función para cambiar la prioridad a la tarea 2 de forma tal de que su prioridad sea un cierto tiempo mayor a la prioridad de 'task1' y en otro momento de menor prioridad.
 La función usada es:
@@ -99,7 +100,7 @@ La función usada es:
 vTaskPrioritySet(xTask2Handle, (uxPriority + 1));
 ```
 En la figura siguiente se muestra su diagrama temporal.
-
+![GitHub Logo](imagenes/imagen8.png)
 ## Example 9 - Deleting tasks”
 En este ejemplo se muestra como dentro de tareas se pueden crear otras tareas y cómo deben destruirse. 
 ```
@@ -107,28 +108,27 @@ vTaskDelete(xTask2Handle);
 ```
 El diagrama temporal se muestra en la figura 9.
 
-
+![GitHub Logo](imagenes/imagen9.png)
 
 ## Example 10 - Blocking when receiving from a queue”
 En este ejemplo hay 3 tareas (vSender1, vSender1 y vReceiver) con prioridades 1, 1 y 2. Las tareas vSender envían el valor 100 o 200 a una cola de tamaño 5. Después la tarea vReceiver lee los datos de la cola y los imprime. Cabe aclarar, que la cola nunca se llenará porque vReceiver  es de mayor prioridad que la otra tarea que envía datos.
 El diagrama temporal se muestra en la figura 10.
-
-![GitHub Logo](imagenes/WhatsApp Image 2019-11-15 at 7.05.50 AM.jpeg)
-
+![GitHub Logo](imagenes/imagen10.png)
 ## Example 11 - Blocking when sending to a queue or sending structures on a queue”
 El diagrama temporal se muestra en la figura 11.
+![GitHub Logo](imagenes/imagen11.png)
 ## Example 12- Using a binary semaphore to synchronize a task with an interrupt”
 El diagrama temporal se muestra en la figura 12.
-![GitHub Logo](imagenes/WhatsApp Image 2019-11-15 at 7.06.09 AM.jpeg)
-
+![GitHub Logo](imagenes/imagen12.png)
 ## Example 13 - Using a counting semaphore to synchronize a task with an interrupt”
 El diagrama temporal se muestra en la figura 13.
+![GitHub Logo](imagenes/imagen13.png)
 ## Example 14 - Sending and receiving on a queue from within an interrupt”
 El diagrama temporal se muestra en la figura 14.
-![GitHub Logo](imagenes/WhatsApp Image 2019-11-15 at 7.06.25 AM.jpeg)
+![GitHub Logo](imagenes/imagen14.png)
 ## Example 15- Re-writing vPrintString() to use a semaphore”
 El diagrama temporal se muestra en la figura 15.
-![GitHub Logo](imagenes/WhatsApp Image 2019-11-15 at 7.06.43 AM.jpeg)
+![GitHub Logo](imagenes/imagen15.png)
 
 ## Implementación 1
 
