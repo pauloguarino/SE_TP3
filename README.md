@@ -170,3 +170,7 @@ Se crean tres tareas de igual prioridad. Donde cada tarea hace titilar el mismo 
 Para que cada tarea complete una pasada se utiliza un mutex, que se toma al iniciar la tarea y se libera al finalizar el delay luego de apagar el LED.  A continuación, se muestra la ejecución del programa. 
 
 ![GitHub Logo](imagenes/ejer_3.png)
+
+# Hoja de ruta
+
+![GitHub Logo](rtos.jpg)
